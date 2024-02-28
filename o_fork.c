@@ -1,16 +1,16 @@
 #include "shellHead.h"
 /**
  * o_pick - function that create a fork
- *@parag: command and values path
+ *@pg: command and values path
  *@argv: Has the name of our program
- *@env_scap: environment
- *@p_o_tr: command line for the user
+ *@e_s: environment
+ *@ptr: command line for the user
  *@nerp: id of proces
  *@carma: Checker add new test
  *Return: 0 success
  */
 
-int o_pick(char **parag, char **argv, char **env_scap, char *p_o_tr, int nerp, int carma)
+int o_pick(char **pg, char **argv, char **e_s, char *ptr, int nerp, int carma)
 {
 	pid_t child;
 	int state;
@@ -20,13 +20,13 @@ int o_pick(char **parag, char **argv, char **env_scap, char *p_o_tr, int nerp, i
 
 	if (child == 0)
 	{
-		if (execve(parag[0], parag, env_scap) == -1)
+		if (execve(pg[0], pg, e_s) == -1)
 		{
-			fprintf(stderr, format, argv[0], nerp, parag[0]);
+			fprintf(stderr, format, argv[0], nerp, pg[0]);
 			if (!carma)
-				free(parag[0]);
-			free(parag);
-			free(p_o_tr);
+				free(pg[0]);
+			free(pg);
+			free(ptr);
 			exit(errno);
 		}
 	}

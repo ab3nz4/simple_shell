@@ -13,7 +13,7 @@
 extern char **environ;
 
 int o_strcomp(char *str1, char *str2);
-size_t o_str_n_comp(char *str1, char *str2, size_t n);
+size_t o_n_cmp(char *str1, char *str2, size_t n);
 int o_str_length(char *string);
 char *o_strcopy(char *dest, char *src);
 char *o_strconcat(char *dest, char *src);
@@ -22,15 +22,15 @@ char *o_strchart(const char *string, int carma);
 size_t o_strspin(const char *str1, const char *str2);
 size_t o_strspun(const char *str1, const char *str2);
 
-char *o_path_find(char **env_scap);
-int abpaz(char **parag, char **env_scap);
+char *o_path_find(char **e_s);
+int abpaz(char **pg, char **e_s);
 char *o_cmd(void);
-int o_pick(char **parag, char **argv, char **env_scap,
-char *p_o_tr, int nerp, int carma);
+int o_pick(char **pg, char **argv, char **e_s,
+char *ptr, int nerp, int carma);
 char *o_toks(char *str, const char *delim);
-void o_get_environ(char **env_scap);
-char **o_get_toktok(char *p_o_tr);
-void o_exit(char **args, char *p_o_tr, int _out_);
+void o_get_environ(char **e_s);
+char **o_get_toktok(char *ptr);
+void o_exit(char **args, char *ptr, int _out_);
 
 
 

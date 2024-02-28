@@ -1,7 +1,7 @@
 #include "shellHead.h"
 
 /**
- * o_toks - breaks the string str1 into tokens 
+ * o_toks - breaks the string str1 into tokens
  * @str: string to tokenize
  * @delim: string with the char.
  * Return: the first/next token

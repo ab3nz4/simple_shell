@@ -3,10 +3,10 @@
  * main - main arguments functions
  * @argc:count of argumnents
  * @argv: arguments
- * @env_scap: environment
+ * @e_s: environment
  * Return: _out_ = 0.
  */
-int main(int argc, char **argv, char **env_scap)
+int main(int argc, char **argv, char **e_s)
 {
 	char *getcommand = NULL, **user_command = NULL;
 	int pa_v = 0, _out_ = 0, n = 0;
@@ -26,12 +26,12 @@ int main(int argc, char **argv, char **env_scap)
 			}
 			if ((!o_strcomp(user_command[0], "exit")) && user_command[1] == NULL)
 				o_exit(user_command, getcommand, _out_);
-			if (!o_strcomp(user_command[0], "env_scap"))
-				o_get_environ(env_scap);
+			if (!o_strcomp(user_command[0], "e_s"))
+				o_get_environ(e_s);
 			else
 			{
-				n = abpaz(&user_command[0], env_scap);
-				_out_ = o_pick(user_command, argv, env_scap, getcommand, pa_v, n);
+				n = abpaz(&user_command[0], e_s);
+				_out_ = o_pick(user_command, argv, e_s, getcommand, pa_v, n);
 				if (n == 0)
 					free(user_command[0]);
 			}

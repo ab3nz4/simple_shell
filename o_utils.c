@@ -46,7 +46,7 @@ int o_strcomp(char *str1, char *str2)
 }
 
 /**
- * o_str_length - copies the string pointed 
+ * o_str_length - copies the string pointed
  * @string: A pointer
  * Return: char pointer to dest
  */
@@ -64,14 +64,14 @@ int o_str_length(char *string)
 }
 
 /**
- *o_str_n_comp -  function that compares two strings.
+ *o_n_cmp -  function that compares two strings.
  *@str1: string one
  *@str2: string two
  *@n: number of characters
  * Return: diference
  */
 
-size_t o_str_n_comp(char *str1, char *str2, size_t n)
+size_t o_n_cmp(char *str1, char *str2, size_t n)
 {
 	size_t i, j;
 
@@ -88,7 +88,7 @@ size_t o_str_n_comp(char *str1, char *str2, size_t n)
 }
 
 /**
- * o_strcopy - copies the string pointed 
+ * o_strcopy - copies the string pointed
  * @dest: destination of the copy
  * @src: source of the copy
  *
