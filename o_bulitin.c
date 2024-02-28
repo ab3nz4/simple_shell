@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "shellHead.h"
 /**
  * _exit_command - this function closes the simple_shell when
  * @arg: pointer with the direction argument.

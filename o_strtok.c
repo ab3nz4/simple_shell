@@ -1,8 +1,4 @@
-#include "shell.h"
-
-char *_strchr(const char *s, int c);
-size_t _strspn(const char *s1, const char *s2);
-size_t _strcspn(const char *s1, const char *s2);
+#include "shellHead.h"
 
 /**
  * _strtok - breaks the string s1 into tokens and null-terminates them.

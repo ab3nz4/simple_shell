@@ -114,11 +114,11 @@ $
 |[_fork_function.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_fork_function.c)|Create the fork function to execute the command types by the user|
 |[_get_token.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_get_token.c)|Tokenize the strings|
 |[_get_path.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_get_path.c)|Get the env to find the PATH|
-|[_getline_command.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_getline_command.c)|Print the $ and get what the user types|
+|[o_cmd.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/o_cmd.c)|Print the $ and get what the user types|
 |[shell.h](https://github.com/RicardoArquimedes/simple_shell/blob/master/shell.h)|Prototypes functions and headers|
 |[simple_shell.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/simple_shell.c)|Our simple shell functions|
 |[_str_utils.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_str_utils.c)|Auxiliar strings functions|
-|[_values_path.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/_values_path.c)|Concatenate the path with the command|
+|[abpaz.c](https://github.com/RicardoArquimedes/simple_shell/blob/master/abpaz.c)|Concatenate the path with the command|
 |[AUTHORS](https://github.com/RicardoArquimedes/simple_shell/blob/master/AUTHORS)|Contributors in this repository|
 |[man_1_simpleShell](https://github.com/RicardoArquimedes/simple_shell/blob/master/man_1_simpleShell)|Manual page our of Simple Shell|
 |[README.md](https://github.com/RicardoArquimedes/simple_shell/blob/master/README.md)|Information about our repository|

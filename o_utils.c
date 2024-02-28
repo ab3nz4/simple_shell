@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "shellHead.h"
 /**
  *_strcat - copy string to another string.
  *@dest: char

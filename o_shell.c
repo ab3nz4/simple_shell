@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "shellHead.h"
 /**
  * main - main arguments functions
  * @ac:count of argumnents
@@ -14,7 +14,7 @@ int main(int ac, char **av, char **env)
 
 	while (1)
 	{
-		getcommand = _getline_command();
+		getcommand = o_cmd();
 		if (getcommand)
 		{
 			pathValue++;
@@ -30,8 +30,8 @@ int main(int ac, char **av, char **env)
 				_getenv(env);
 			else
 			{
-				n = _values_path(&user_command[0], env);
-				_exit = _fork_fun(user_command, av, env, getcommand, pathValue, n);
+				n = abpaz(&user_command[0], env);
+				_exit = _fork(user_command, av, env, getcommand, pathValue, n);
 				if (n == 0)
 					free(user_command[0]);
 			}
