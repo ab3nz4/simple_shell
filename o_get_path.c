@@ -1,29 +1,31 @@
 #include "shellHead.h"
 /**
- * _get_path - get variable PATH.
- * @env: enviromente local
+ * o_path_find - get variable PATH.
+ * @env_scap: enviromente local
  * Return: value of PATH.
  */
 
-char *_get_path(char **env)
+char *o_path_find(char **env_scap)
 {
-	size_t index = 0, var = 0, count = 5;
+	size_t index = 0, unk = 0, count = 5;
 	char *path = NULL;
 
-	for (index = 0; _strncmp(env[index], "PATH=", 5); index++)
-		;
-	if (env[index] == NULL)
+	while (env_scap[index] != NULL && o_str_n_comp(env_scap[index], "PATH=", 5) != 0)
+		index++;
+	if (env_scap[index] == NULL)
 		return (NULL);
 
-	for (count = 5; env[index][var]; var++, count++)
-		;
+	while (env_scap[index][unk] != '\0')
+		unk++;
+	count = unk - 5;
 	path = malloc(sizeof(char) * (count + 1));
 
 	if (path == NULL)
 		return (NULL);
 
-	for (var = 5, count = 0; env[index][var]; var++, count++)
-		path[count] = env[index][var];
+	unk = 5;
+	for (count = 0; env_scap[index][unk] != '\0'; unk++, count++)
+		path[count] = env_scap[index][unk];
 
 	path[count] = '\0';
 	return (path);

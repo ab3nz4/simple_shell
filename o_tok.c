@@ -1,37 +1,37 @@
 #include "shellHead.h"
 /**
- * _get_token - get token of string
- * @lineptr: comman user
+ * o_get_toktok - get token of string
+ * @p_o_tr: comman user
  * Return: To a pointer
  */
 
-char **_get_token(char *lineptr)
+char **o_get_toktok(char *p_o_tr)
 {
-	char **user_command = NULL;
+	char **propme = NULL;
 	char *token = NULL;
 	size_t i = 0;
 	int size = 0;
 
-	if (lineptr == NULL)
+	if (p_o_tr == NULL)
 		return (NULL);
 
-	for (i = 0; lineptr[i]; i++)
+	for (i = 0; p_o_tr[i]; i++)
 	{
-		if (lineptr[i] == ' ')
+		if (p_o_tr[i] == ' ')
 			size++;
 	}
-	if ((size + 1) == _strlen(lineptr))
+	if ((size + 1) == o_str_length(p_o_tr))
 		return (NULL);
-	user_command = malloc(sizeof(char *) * (size + 2));
-	if (user_command == NULL)
+	propme = malloc(sizeof(char *) * (size + 2));
+	if (propme == NULL)
 		return (NULL);
 
-	token = _strtok(lineptr, " \n\t\r");
+	token = o_toks(p_o_tr, " \n\t\r");
 	for (i = 0; token != NULL; i++)
 	{
-		user_command[i] = token;
-		token = _strtok(NULL, " \n\t\r");
+		propme[i] = token;
+		token = o_toks(NULL, " \n\t\r");
 	}
-	user_command[i] = NULL;
-	return (user_command);
+	propme[i] = NULL;
+	return (propme);
 }

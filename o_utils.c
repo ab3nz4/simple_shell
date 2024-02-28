@@ -1,61 +1,61 @@
 #include "shellHead.h"
 /**
- *_strcat - copy string to another string.
+ *o_strconcat - copy string to another string.
  *@dest: char
  *@src: char
  *Return: dest
  *
  */
 
-char *_strcat(char *dest, char *src)
+char *o_strconcat(char *dest, char *src)
 {
-	int d = 0;
-	int s = 0;
+	int init = 0;
+	int init2 = 0;
 
-	while (dest[d] != '\0')
+	while (dest[init] != '\0')
 	{
-		d++;
+		init++;
 	}
-	while (src[s] != '\0')
+	while (src[init2] != '\0')
 	{
-		dest[d] = src[s];
-		d++;
-		s++;
+		dest[init] = src[init2];
+		init++;
+		init2++;
 	}
-	dest[d] = '\0';
+	dest[init] = '\0';
 	return (dest);
 }
 
 /**
- * _strcmp - compare the values of a string
- * @s1: character
- * @s2: character
+ * o_strcomp - compare the values of a string
+ * @str1: character
+ * @str2: character
  * Return: 0
  */
 
-int _strcmp(char *s1, char *s2)
+int o_strcomp(char *str1, char *str2)
 {
 	int a;
 
-	for (a = 0; s1[a] != '\0' && s2[a] != '\0'; a++)
+	for (a = 0; str1[a] != '\0' && str2[a] != '\0'; a++)
 	{
-		if (s1[a] != s2[a])
-			return ((int)s1[a] - s2[a]);
+		if (str1[a] != str2[a])
+			return ((int)str1[a] - str2[a]);
 	}
 	return (0);
 }
 
 /**
- * _strlen - copies the string pointed to by src into dest
- * @s: A pointer
+ * o_str_length - copies the string pointed 
+ * @string: A pointer
  * Return: char pointer to dest
  */
 
-int _strlen(char *s)
+int o_str_length(char *string)
 {
 	int ch = 0;
 
-	while (*(s + ch) != '\0')
+	while (*(string + ch) != '\0')
 	{
 		ch++;
 	}
@@ -64,20 +64,20 @@ int _strlen(char *s)
 }
 
 /**
- *_strncmp -  function that compares two strings.
- *@s1: string one
- *@s2: string two
+ *o_str_n_comp -  function that compares two strings.
+ *@str1: string one
+ *@str2: string two
  *@n: number of characters
  * Return: diference
  */
 
-size_t _strncmp(char *s1, char *s2, size_t n)
+size_t o_str_n_comp(char *str1, char *str2, size_t n)
 {
 	size_t i, j;
 
-	for (j = 0; s1[j] != '\0' && j < n; j++)
+	for (j = 0; str1[j] != '\0' && j < n; j++)
 	{
-		i = s1[j] - s2[j];
+		i = str1[j] - str2[j];
 
 		if (i != 0)
 		{
@@ -88,14 +88,14 @@ size_t _strncmp(char *s1, char *s2, size_t n)
 }
 
 /**
- * _strcpy - copies the string pointed to by src into dest
+ * o_strcopy - copies the string pointed 
  * @dest: destination of the copy
  * @src: source of the copy
  *
  * Return: char pointer to dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *o_strcopy(char *dest, char *src)
 {
 	int i = 0;
 

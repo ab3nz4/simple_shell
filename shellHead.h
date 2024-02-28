@@ -12,25 +12,26 @@
 
 extern char **environ;
 
-int _strcmp(char *s1, char *s2);
-size_t _strncmp(char *s1, char *s2, size_t n);
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
-int _putchar(char c);
-char *_strchr(const char *s, int c);
-size_t _strspn(const char *s1, const char *s2);
-size_t _strcspn(const char *s1, const char *s2);
+int o_strcomp(char *str1, char *str2);
+size_t o_str_n_comp(char *str1, char *str2, size_t n);
+int o_str_length(char *string);
+char *o_strcopy(char *dest, char *src);
+char *o_strconcat(char *dest, char *src);
+int o_putcharac(char carma);
+char *o_strchart(const char *string, int carma);
+size_t o_strspin(const char *str1, const char *str2);
+size_t o_strspun(const char *str1, const char *str2);
 
-char *_get_path(char **env);
-int abpaz(char **arg, char **env);
+char *o_path_find(char **env_scap);
+int abpaz(char **parag, char **env_scap);
 char *o_cmd(void);
-void _getenv(char **env);
-char **_get_token(char *lineptr);
-void _exit_command(char **args, char *lineptr, int _exit);
-int _fork(char **arg, char **av, char **env,
-char *lineptr, int np, int c);
-char *_strtok(char *str, const char *delim);
+int o_pick(char **parag, char **argv, char **env_scap,
+char *p_o_tr, int nerp, int carma);
+char *o_toks(char *str, const char *delim);
+void o_get_environ(char **env_scap);
+char **o_get_toktok(char *p_o_tr);
+void o_exit(char **args, char *p_o_tr, int _out_);
 
 
-#endif /* SHELL_H */
+
+#endif

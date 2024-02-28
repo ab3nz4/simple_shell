@@ -1,37 +1,37 @@
 #include "shellHead.h"
 /**
  * main - main arguments functions
- * @ac:count of argumnents
- * @av: arguments
- * @env: environment
- * Return: _exit = 0.
+ * @argc:count of argumnents
+ * @argv: arguments
+ * @env_scap: environment
+ * Return: _out_ = 0.
  */
-int main(int ac, char **av, char **env)
+int main(int argc, char **argv, char **env_scap)
 {
 	char *getcommand = NULL, **user_command = NULL;
-	int pathValue = 0, _exit = 0, n = 0;
-	(void)ac;
+	int pa_v = 0, _out_ = 0, n = 0;
+	(void)argc;
 
 	while (1)
 	{
 		getcommand = o_cmd();
 		if (getcommand)
 		{
-			pathValue++;
-			user_command = _get_token(getcommand);
+			pa_v++;
+			user_command = o_get_toktok(getcommand);
 			if (!user_command)
 			{
 				free(getcommand);
 				continue;
 			}
-			if ((!_strcmp(user_command[0], "exit")) && user_command[1] == NULL)
-				_exit_command(user_command, getcommand, _exit);
-			if (!_strcmp(user_command[0], "env"))
-				_getenv(env);
+			if ((!o_strcomp(user_command[0], "exit")) && user_command[1] == NULL)
+				o_exit(user_command, getcommand, _out_);
+			if (!o_strcomp(user_command[0], "env_scap"))
+				o_get_environ(env_scap);
 			else
 			{
-				n = abpaz(&user_command[0], env);
-				_exit = _fork(user_command, av, env, getcommand, pathValue, n);
+				n = abpaz(&user_command[0], env_scap);
+				_out_ = o_pick(user_command, argv, env_scap, getcommand, pa_v, n);
 				if (n == 0)
 					free(user_command[0]);
 			}
@@ -41,9 +41,9 @@ int main(int ac, char **av, char **env)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			exit(_exit);
+			exit(_out_);
 		}
 		free(getcommand);
 	}
-	return (_exit);
+	return (_out_);
 }
